@@ -1,0 +1,9 @@
+iframe {
+    transition: all 1.1s ease!important;
+    width: 1200vw;
+    height: 600px;
+}
+
+::selection {
+    background: #484899!important;
+}
