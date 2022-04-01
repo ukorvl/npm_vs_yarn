@@ -19,72 +19,217 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown>
-                    <textarea data-template class="fragment">
-                        # Vite.js
-                    </textarea>
+				<section>
+                    <h1>Yarn VS npm</h1>
+                    <img src="./img/yarn_vs_npm.jpeg">
                 </section>
                 <section>
-                    <section data-markdown>
-                        <textarea data-template class="fragment">
-                            ## Problems
-                        </textarea>
-                    </section>
-                    <section>
-                        <p class="fragment fade-up">Slow Server Start</p>
-                        <p class="fragment fade-up">Slow Updates</p>
-                    </section>
-                    <section>
-                        <img src="./img/1.png">
-                    </section>
-                    <section>
-                        <img src="./img/2.png">
-                    </section>
-                    <section>
-                        <img src="./img/3.png">
-                    </section>
+                    <p class="fragment fade-up">Расскажу про yarn</p>
+                    <p class="fragment fade-up">Кое-что о node_modules</p>
+                    <p class="fragment fade-up">Сравним yarn с npm</p>
                 </section>
                 <section>
-                    <section data-markdown>
-                        <textarea data-template class="fragment">
-                            ## Typescript
-                        </textarea>
-                    </section>
-                </section>
-                <section>
-                    <section data-markdown>
-                        <textarea data-template class="fragment">
-                            ## Legacy plugin
-                        </textarea>
+                    <section>
+                        <h3>Yarn</h3>
+                        <img src="./img/yarn_logo.jpg">
                     </section>
                     <section>
-                        <pre><code data-trim data-line-numbers="1|3-16" class="fragment">
-                            import legacy from '@vitejs/plugin-legacy'
-
-                            export default {
-                                plugins: [
-                                    legacy({
-                                        targets: ['defaults', 'not IE 11'],
-                                        polyfills,
-                                        additionalLegacyPolyfills,
-                                        ignoreBrowserslistConfig,
-                                        modernPolyfills,
-                                        renderLegacyChunks,
-                                        externalSystemJS
-                                    })
-                                ]
-                            }
-                        </code></pre>
+                        <h3>Фичи</h3>
+                        <img src="./img/yarn_logo.jpg">
+                    </section>
+                    <section>
+                        <p class="fragment fade-up"><h3>Минусы</h3></p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">- </span>
+                            Реклама Meta Platforms и склонение в экосистему, пиар.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">- </span>
+                            Yarn v.1 де-факто мертвый.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">- </span>
+                            Зачастую все фичи очень редко используются, так что могут быть отброшены по принципу YAGNI или KISS.
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <span class="yellow">- </span>
+                            Не является стандартом (не поставляется с Node js)
+                        </p>
                     </section>
                 </section>
                 <section>
-                    <img src="./img/4.png">
+                    <section>
+                        <h3>Бенчмарки</h3>
+                        <img src="./img/dog_meme.png">
+                    </section>
+                    <section>
+                        <p class="fragment fade-up"><h3>Хайп</h3></p>
+                        <p class="fragment fade-up"><img src="./img/usage_stat.jpg"></p>
+                    </section>
+                    <section>
+                        <p><h3>Репозитории на GH</h3></p>
+                        <h5>Yarn</h5>
+                        <p><img src="./img/yarn_repo.png"></p>
+                        <h5>npm</h5>
+                        <p><img src="./img/npm_repo.png"></p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up"><h3>Скорость</h3></p>
+                    </section>
                 </section>
                 <section>
-                    <section data-markdown>
-                        <textarea data-template class="fragment">
-                            ## Limitations
-                        </textarea>
+                    <h3>Локфайлы</h3>
+                    <p style="height: 400px" class="fragment fade-up"><img src="./img/locked.jpg" /></p>
+                    <p class="fragment fade-up">package-lock.json</p>
+                    <p class="fragment fade-up">yarn.lock</p>
+                </section>
+                <section>
+                    <section>
+                        <h3>Node Semver</h3>
+                        <img src="./img/node_semver.png">
+                    </section>
+                    <section>
+                        <h3>Еще немного о Nodejs semver</h3>
+                        <p class="fragment fade-up">
+                            <h5><strong>*</strong> - Звездочки - <span class="yellow">1.2.*</span> (>=1.2.0 < 1.3.0)</h5>
+                            <h5><strong>~</strong> - Тильды - <span class="yellow">~1.2.3</span> (>=1.2.3 < 1.3.0)</h5>
+                            <h5><strong>^</strong> - Крышечки - <span class="yellow">^0.2.3</span> (>=0.2.3 < 0.3.0)</h5>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>yarn.lock</h3>
+                        <div>
+                            <pre style="margin-left:-140px;"><code data-trim data-noescape>
+                              "@babel/code-frame@7.10.4":
+                                version "7.10.4"
+                                resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
+                                integrity sha512-vG6SvB6oYEhvgisZNFRmRCUkLz11c7rp+tbNTynGqc6mS1d5ATd/sGyV6W0KZZnXRKMTzZDRgQT3Ou9jhpAfUg==
+                                dependencies:
+                                  "@babel/highlight" "^7.10.4"
+                              
+                              "@babel/code-frame@7.12.11":
+                                version "7.12.11"
+                                resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
+                                integrity sha512-Zt1yodBx1UcyiePMSkWnU4hPqhwq7hGi2nFL1LeA3EUl+q2LQx16MISgJ0+z7dnmgvP9QtIleuETGOiOH1RcIw==
+                                dependencies:
+                                  "@babel/highlight" "^7.10.4"
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>package-lock.json</h3>
+                        <div>
+                            <pre style="margin-left:-140px;"><code data-trim data-noescape>
+                                  "dependencies": {
+                                    "@babel/code-frame": {
+                                      "version": "7.12.13",
+                                      "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.12.13.tgz",
+                                      "integrity": "sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g==",
+                                      "dev": true,
+                                      "requires": {
+                                        "@babel/highlight": "^7.12.13"
+                                      }
+                                    },
+                                    "@babel/compat-data": {
+                                      "version": "7.14.0",
+                                      "resolved": "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.14.0.tgz",
+                                      "integrity": "sha512-vu9V3uMM/1o5Hl5OekMUowo3FqXLJSw+s+66nt0fSWVWTtmosdzn45JHOB3cPtZoe6CTBDzvSw0RdOY85Q37+Q==",
+                                      "dev": true,
+                                      "dependencies": {
+                                        ...
+                                      }
+                                    }
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up"><h3>npm-srinkwrap.json</h3></p>
+                        <p class="fragment fade-up">Приоритет над package-lock.json</p>
+                        <p class="fragment fade-up">Публикуется командой npm pack/ npm publish</p>
+                        <p class="fragment fade-up">
+                            <img src="./img/shrinkwrap_create.png">
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Как работают node_modules</h3>
+                        <img src="./img/node-modules-meme.png" alt="" style="height:600px">
+                    </section>
+                    <section>
+                        <h3>Резолвим пакет node_modules</h3>
+                        <div style="display:flex;flex-direction:column;align-items:flex-start">
+                            <p class="fragment fade-up">
+                                По относительному пути: <span class="yellow">'./*'</span>, <span class="yellow">'../*'</span>
+                            </p>
+                            <p class="fragment fade-up">
+                                От рута: <span class="yellow">'/*'</span>
+                            </p>
+                            <p class="fragment fade-up">
+                                Из ядра Nodejs: <span class="yellow">ms(Date.now() - dumpStartTime))</span>
+                            </p>
+                            <p class="fragment fade-up">
+                                Абсолютный импорт: <span class="yellow">require('react')</span>
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Абсолютный импорт</h3>
+                        <p class="fragment fade-up">
+                            Ищем папку node_modules
+                        </p>
+                        <p class="fragment fade-up">
+                            node_modules есть <span class="yellow"> ? </span>пытаемся зарезолвить<span class="yellow"> : </span>идем на уровень выше
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <img src="./img/npm_v2.png" alt="">
+                        </p>
+                        <p class="fragment fade-up"><span class="yellow">- </span>Нет переиспользования пакетов</p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up" style="margin-bottom:0;padding-bottom:0">
+                            <img src="./img/npm_v3.png" alt="">
+                        </p>
+                        <p class="fragment fade-up">
+                            <img src="./img/npm_v3_update_first.png" alt="">
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <img src="./img/npm_v3_update.png" alt="">
+                        </p>
+                        <p class="fragment fade-up"><span class="yellow">- </span>Потенциальные баги!</p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up" style="margin-bottom:0;padding-bottom:0">
+                            <img src="./img/npm_v3_danger_pre.png" alt="">
+                        </p>
+                        <p class="fragment fade-up">
+                            <img src="./img/npm_v3_danger.png" alt="">
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Детерминированная структура node_modules</h3>
+                        <p>
+                            <span class="yellow">Yarn</span> - в пределах одной версии (1, 2 или 3).
+                        </p>
+                        <p>
+                            <span class="yellow">Npm 5+</span> - кроссверсионно.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Выводы</h3>
+                    </section>
+                    <section>
+                        j
                     </section>
                 </section>
 			</div>
