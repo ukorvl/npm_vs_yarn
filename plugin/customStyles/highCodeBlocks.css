@@ -1,6 +1,5 @@
 .reveal pre code {
     max-height: 90vh;
     max-width: 90vw;
-    width: 90vw;
     overflow: hidden;
 }

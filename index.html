@@ -34,8 +34,156 @@
                         <img src="./img/yarn_logo.jpg">
                     </section>
                     <section>
-                        <h3>Фичи</h3>
-                        <img src="./img/yarn_logo.jpg">
+                        <h3>Особенности</h3>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn [install]</span>
+                            - установка всех пакетов.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn add [package] [--dev]</span>
+                            - добавить пакет.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn remove [package]</span>
+                            - удалить пакет.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn global add [package]</span>
+                            - установить пакет глобально.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn why [package]</span>
+                            - вывести инфо, почему пакет в проекте.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn upgrade</span>
+                            - удобный аналог rm -rf node_modules && npm install.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">yarn audit</span>
+                            - анализ зависимостей на уязвимости.
+                        </p>
+                    </section>
+                    <section>
+                        <img src="./img/rick_morty_meme.png">
+                    </section>
+                    <section>
+                        <p class="fragment fade-up"><h3>Фичи</h3></p>
+                        <p>
+                            <span class="yellow">+ </span>
+                            Selective resolutions - жестко заданная версия транзитивной зависимости.
+                            <div>
+                                <pre><code data-trim data-noescape>
+                                    "resolutions": {
+                                        "es5-ext": "1.0.53"
+                                    }
+                                </code></pre>
+                            </div>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <span class="yellow">+ </span>
+                            Workspaces - один локфайл/install на несколько проектов.
+                            <div>
+                                <pre><code data-trim data-noescape>
+                                    {
+                                        "private": true,
+                                        "workspaces": ["workspace-a", "workspace-b"]
+                                    }
+                                </code></pre>
+                                <pre><code data-trim data-noescape>
+                                    {
+                                        "name": "workspace-a",
+                                        "version": "1.0.0",
+                                      
+                                        "dependencies": {
+                                          "cross-env": "5.0.5"
+                                        }
+                                    }
+                                </code></pre>
+                            </div>
+                        </p>
+                    </section>
+                    <section>
+                        <span class="yellow">+ </span>
+                        Merging lockfiles - одной командой.
+                        <div>
+                            <pre><code data-trim data-noescape>
+                                $ yarn install
+
+                                yarn install v1.0.1
+                                info Merge conflict detected in yarn.lock and successfully merged.
+                                [1/4] Resolving packages...
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <span class="yellow">+ </span>
+                        Возможность запускать бинарники из node_modules/.bin из коробки.
+                        <div>
+                            <pre><code data-trim data-noescape>
+                                $ yarn elsint
+                            </code></pre>
+                        </div>
+                        Npm с 5 версии использует <span class="yellow">npx</span>, который обладает рядом преимуществ:
+                        <div>
+                            <pre><code data-trim data-noescape>
+                                $ npx create-react-app
+                            </code></pre>
+                        </div>
+                        <div>
+                            <pre><code data-trim data-noescape>
+                                $ npx -p node@6 myscript.js
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <span class="yellow">+ </span>
+                            yarn upgrade-interactive.
+                        </p>
+                        <p><img src="./img/yarn_upgrade_interactive.jpg" /></p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <span class="yellow">+ </span>
+                            Безопасный.
+                        </p>
+                        <div>
+                            <pre><code data-trim data-noescape>
+                                "license": "MIT",
+                                "main": "index.js",
+                                "name": "core-js",
+                                "repository": {
+                                  "type": "git",
+                                  "url": "git+https://github.com/zloirock/core-js.git",
+                                  "directory": "packages/core-js"
+                                },
+                                "scripts": {
+                                  "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+                                },
+                            </code></pre>
+                        </div>
+                        <p class="fragment fade-up">
+                            <span class="yellow">.yarnrc</span> ---> enableScripts: false
+                        </p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <span class="yellow">+ </span>
+                            Был написан в Meta Platform, но уже давно стал полностью опенсорсным.
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">+ </span>
+                            Публичный чат (Discord), понятный состав команды
+                        </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">+ </span>
+                            Вовлеченность коммьюнити. Больше всего контрибьюторов - 48. У npm - 24.
+                        </p>
                     </section>
                     <section>
                         <p class="fragment fade-up"><h3>Минусы</h3></p>
@@ -49,14 +197,17 @@
                         </p>
                         <p class="fragment fade-up">
                             <span class="yellow">- </span>
-                            Зачастую все фичи очень редко используются, так что могут быть отброшены по принципу YAGNI или KISS.
+                            Зачастую фичи очень редко используются, так что могут быть отброшены по принципу YAGNI или KISS.
                         </p>
                     </section>
                     <section>
                         <p class="fragment fade-up">
                             <span class="yellow">- </span>
-                            Не является стандартом (не поставляется с Node js)
+                            Не является стандартом (не поставляется с Node js в отл. от npm)
                         </p>
+                        <p class="fragment fade-up">
+                            <span class="yellow">- </span>
+                            Нет больших бюджетов на разработку в отл. от npm (Microsoft).
                     </section>
                 </section>
                 <section>
@@ -77,6 +228,20 @@
                     </section>
                     <section>
                         <p class="fragment fade-up"><h3>Скорость</h3></p>
+                        <h5>Установка зависимостей в маленькое приложение.</h5>
+                        <p class="fragment fade-up"><img src="./img/speed_comparsion_small_app.jpg" /></p>
+                    </section>
+                    <section>
+                        <h5>Установка зависимостей в приложение среднего размера.</h5>
+                        <p class="fragment fade-up"><img src="./img/speed_comparsion_middle_app.jpg" /></p>
+                    </section>
+                    <section>
+                        <p class="fragment fade-up">
+                            <a rel="stylesheet" href="https://p.datadoghq.eu/sb/d2wdprp9uki7gfks-c562c42f4dfd0ade4885690fa719c818?tpl_var_npm=%2A&tpl_var_pnpm=no&tpl_var_yarn-classic=%2A&tpl_var_yarn-modern=no&tpl_var_yarn-nm=no&tpl_var_yarn-pnpm=no&from_ts=1648174291290&to_ts=1648779091290&live=true">
+                                Бенчмарк от Yarn
+                            </a>
+                        </p>
+                        <p class="fragment fade-up"><h3>Медленнее !== медленно</h3></p>
                     </section>
                 </section>
                 <section>
@@ -103,7 +268,7 @@
                     <section>
                         <h3>yarn.lock</h3>
                         <div>
-                            <pre style="margin-left:-140px;"><code data-trim data-noescape>
+                            <pre><code data-trim data-noescape>
                               "@babel/code-frame@7.10.4":
                                 version "7.10.4"
                                 resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -123,7 +288,7 @@
                     <section>
                         <h3>package-lock.json</h3>
                         <div>
-                            <pre style="margin-left:-140px;"><code data-trim data-noescape>
+                            <pre><code data-trim data-noescape>
                                   "dependencies": {
                                     "@babel/code-frame": {
                                       "version": "7.12.13",
@@ -227,9 +392,23 @@
                 <section>
                     <section>
                         <h3>Выводы</h3>
+                        <div style="display:flex;flex-direction:column;align-items:flex-start">
+                            <p>
+                                Обе технологии широко распространены и имеют сильное коммьюнити.
+                            </p>
+                            <p>
+                                Явного лидера нет. Npm чуть проще и доступнее, но ни в чем не является лидером.
+                            </p>
+                            <p>
+                                Yarn - первопроходец. Npm только сейчас догоняет yarn v.1.*.
+                            </p>
+                            <p>
+                                В среде React (и его экосистемы) гораздо более распространен Yarn.
+                            </p>
+                        </div>
                     </section>
                     <section>
-                        j
+                        Спасибо за внимание!
                     </section>
                 </section>
 			</div>
