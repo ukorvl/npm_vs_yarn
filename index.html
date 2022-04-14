@@ -29,12 +29,47 @@
                     <p class="fragment fade-up">Сравним yarn с npm</p>
                 </section>
                 <section>
+                    <h5>Чего мы хотим от пактеного менеджера?</h5>
+                    <div style="display:flex;flex-direction:column;align-items:flex-start">
+                        <p style="margin-bottom:0">
+                            <span class="yellow">1.</span> Скорость.
+                        </p>
+                        <p style="margin-bottom:0">
+                            <span class="yellow">2.</span> Детерминированная структура node_modules.
+                        </p>
+                        <p style="margin-bottom:0">
+                            <span class="yellow">3.</span> Забота о DX.
+                        </p>
+                        <p style="margin-bottom:0">
+                            <span class="yellow">4.</span> Безопасность.
+                        </p>
+                        <p style="margin-bottom:0">
+                            <span class="yellow">4.</span> Открытость.
+                        </p>
+                    </div>
+                </section>
+                <section>
                     <section>
                         <h3>Yarn</h3>
                         <img src="./img/yarn_logo.jpg">
                     </section>
                     <section>
-                        <h3>Особенности</h3>
+                        <p class="fragment fade-up">
+                            <h3>Особенности</h3>
+                        </p>
+                        <p class="fragment fade-up">
+                            <h5>Установка</h5>
+                            <div>
+                                <pre><code data-trim data-noescape>
+                                    npm install --global yarn
+
+                                    yarn --version
+                                </code></pre>
+                            </div>
+                        </p>
+                    </section>
+                    <section>
+                        <img src="./img/rick_morty_meme.png" style="height:700px;">
                     </section>
                     <section>
                         <p class="fragment fade-up">
@@ -65,9 +100,6 @@
                             <span class="yellow">yarn audit</span>
                             - анализ зависимостей на уязвимости.
                         </p>
-                    </section>
-                    <section>
-                        <img src="./img/rick_morty_meme.png">
                     </section>
                     <section>
                         <p class="fragment fade-up"><h3>Фичи</h3></p>
@@ -229,7 +261,7 @@
                     <section>
                         <p class="fragment fade-up"><h3>Скорость</h3></p>
                         <h5>Установка зависимостей в маленькое приложение.</h5>
-                        <p class="fragment fade-up"><img src="./img/speed_comparsion_small_app.jpg" /></p>
+                        <p class="fragment fade-up"><img src="./img/speed_comparsion_small_app.jpg" style="height:350px;" /></p>
                     </section>
                     <section>
                         <h5>Установка зависимостей в приложение среднего размера.</h5>
@@ -361,7 +393,7 @@
                         <p class="fragment fade-up" style="margin-bottom:0;padding-bottom:0">
                             <img src="./img/npm_v3.png" alt="">
                         </p>
-                        <p class="fragment fade-up">
+                        <p class="fragment fade-up" style="margin-top:-30px">
                             <img src="./img/npm_v3_update_first.png" alt="">
                         </p>
                     </section>
@@ -375,7 +407,7 @@
                         <p class="fragment fade-up" style="margin-bottom:0;padding-bottom:0">
                             <img src="./img/npm_v3_danger_pre.png" alt="">
                         </p>
-                        <p class="fragment fade-up">
+                        <p class="fragment fade-up" style="margin-top:-30px">
                             <img src="./img/npm_v3_danger.png" alt="">
                         </p>
                     </section>
@@ -393,16 +425,16 @@
                     <section>
                         <h3>Выводы</h3>
                         <div style="display:flex;flex-direction:column;align-items:flex-start">
-                            <p>
+                            <p style="margin-bottom:0">
                                 Обе технологии широко распространены и имеют сильное коммьюнити.
                             </p>
-                            <p>
+                            <p style="margin-bottom:0">
                                 Явного лидера нет. Npm чуть проще и доступнее, но ни в чем не является лидером.
                             </p>
-                            <p>
-                                Yarn - первопроходец. Npm только сейчас догоняет yarn v.1.*.
+                            <p style="margin-bottom:0">
+                                Yarn - первопроходец. Npm только сейчас догоняет yarn v.1.*. Крутые фичи, но не must-have.
                             </p>
-                            <p>
+                            <p style="margin-bottom:0">
                                 В среде React (и его экосистемы) гораздо более распространен Yarn.
                             </p>
                         </div>
